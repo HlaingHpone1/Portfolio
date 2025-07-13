@@ -52,14 +52,16 @@ export const Hero = () => {
             >
               View My Work
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 px-8"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download Resume
-            </Button>
+            <Link href="/hlainghpone_resume.pdf" download>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/30 text-white hover:bg-white/10 px-8"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download Resume
+              </Button>
+            </Link>
           </div>
 
           <div className="flex justify-center space-x-6">
