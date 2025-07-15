@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { cn } from "@/utils";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +45,14 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="font-bold text-xl">Portfolio</div>
+          <div
+            className={cn(
+              scrolled ? "text-foreground/80" : "text-white",
+              "font-bold text-xl"
+            )}
+          >
+            Portfolio
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -52,7 +60,10 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-foreground/80 hover:text-foreground transition-colors hover:scale-105 transform duration-200"
+                className={cn(
+                  scrolled ? "text-foreground/80" : "text-white",
+                  "hover:text-foreground transition-colors hover:scale-105 transform duration-200"
+                )}
               >
                 {item.label}
               </button>

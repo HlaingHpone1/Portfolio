@@ -8,6 +8,7 @@ import {
   MapPin,
   Github,
   Linkedin,
+  Facebook,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
@@ -93,12 +94,12 @@ export const Contact = () => {
       href: "https://www.linkedin.com/in/hlainghpone/",
       color: "hover:text-blue-600",
     },
-    // {
-    //   icon: Twitter,
-    //   label: "Twitter",
-    //   href: "https://twitter.com",
-    //   color: "hover:text-blue-400",
-    // },
+    {
+      icon: Facebook,
+      label: "Facebook",
+      href: "https://www.facebook.com/leo.jake/",
+      color: "hover:text-blue-400",
+    },
   ];
 
   return (

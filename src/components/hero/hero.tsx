@@ -1,23 +1,9 @@
-"use client";
-
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { HeroClient } from "./hero-client";
 
 export const Hero = () => {
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  const scrollToAbout = () => {
-    document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  if (!hasMounted) return null;
-
   return (
     <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* Animated background elements */}
@@ -35,8 +21,8 @@ export const Hero = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Full-Stack Developer Enthusiast crafting responsive, interactive
-            user interfaces that engage and inspire.
+            Frontend Developer Enthusiast crafting responsive, interactive user
+            interfaces that engage and inspire.
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
             Passionate about building modern, performant web applications with
@@ -44,19 +30,14 @@ export const Hero = () => {
             digital experiences.
           </p>
 
+          {/* Buttons + Icons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-            <Button
-              onClick={scrollToAbout}
-              size="lg"
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8"
-            >
-              View My Work
-            </Button>
+            <HeroClient />
             <Link href="/hlainghpone_resume.pdf" download>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/30 text-white hover:bg-white/10 px-8"
+                className="border-white/30 bg-white/5 text-white hover:text-white hover:bg-white/10 px-8"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
@@ -86,14 +67,8 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <button
-            onClick={scrollToAbout}
-            className="text-white/60 hover:text-white transition-colors"
-          >
-            <ArrowDown size={32} />
-          </button>
-        </div>
+        {/* Scroll down bounce arrow */}
+        <HeroClient showArrow />
       </div>
     </section>
   );
