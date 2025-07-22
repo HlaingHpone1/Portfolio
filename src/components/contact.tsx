@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 // import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import ScrollFloat from "./animation/ScrollFloat";
 // import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
@@ -106,8 +107,17 @@ export const Contact = () => {
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
-
+          {/* <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2> */}
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=50%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+            containerClassName="text-center text-4xl font-bold mb-12"
+          >
+            Get In Touch
+          </ScrollFloat>
           <div className="flex flex-wrap justify-between gap-4 mb-5">
             <Card className="hover:shadow-lg transition-shadow duration-300 flex-1">
               <CardHeader>

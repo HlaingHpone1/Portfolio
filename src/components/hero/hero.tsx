@@ -2,10 +2,11 @@ import Link from "next/link";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroClient } from "./hero-client";
+import BlurText from "../animation/BlurText";
 
 export const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <section className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-blue-900 to-emerald-500 animate-gradient-flow">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -16,10 +17,15 @@ export const Hero = () => {
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             Hi, I&apos;m{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Hlaing Hpone
-            </span>
           </h1>
+          <BlurText
+            text="Hlaing Hpone"
+            delay={100}
+            animateBy="letters"
+            direction="bottom"
+            className="justify-center"
+            textClassName="mb-8 text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+          />
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Frontend Developer Enthusiast crafting responsive, interactive user
             interfaces that engage and inspire.

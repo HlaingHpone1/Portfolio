@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/utils";
+import GooeyNav from "./animation/GooeyNav";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,7 +57,7 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
@@ -67,7 +68,17 @@ export const Navigation = () => {
               >
                 {item.label}
               </button>
-            ))}
+            ))} */}
+            <GooeyNav
+              items={navItems}
+              particleCount={15}
+              particleDistances={[90, 10]}
+              particleR={100}
+              initialActiveIndex={0}
+              animationTime={600}
+              timeVariance={300}
+              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+            />
             <ThemeToggle />
           </div>
 

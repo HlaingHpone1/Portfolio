@@ -1,11 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
+import ScrollFloat from "./animation/ScrollFloat";
 
 export const About = () => {
   return (
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
+          <ScrollFloat
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=50%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+            containerClassName="text-center text-4xl font-bold mb-12"
+          >
+            About Me
+          </ScrollFloat>
+          {/* <h2 className="text-4xl font-bold text-center mb-12">About Me</h2> */}
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
