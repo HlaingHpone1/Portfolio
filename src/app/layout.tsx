@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Hlaing Hpone | Software Developer Portfolio",
   description:
     "Software developer portfolio showcasing projects, skills, and experience in React, Next.js, Node.js, and more.",
